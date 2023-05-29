@@ -143,6 +143,15 @@ h3 {
    text-align: center;
 }
 
+.made {
+   margin-top: auto;
+   padding: 0 32px;
+}
+
+.made > p:last-child {
+   text-align: end;
+}
+
 .log {
    border: 1px solid black;
 
