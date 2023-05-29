@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+   <meta charset='UTF-8'>
+   <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+   <meta name='viewport' content='width=device-width, initial-scale=1.0'>
+   <title>Problema del ebrio</title>
+
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+   
+   <link rel='stylesheet' href='./assets/css/normalize.css'>
+   <link rel='stylesheet' href='./assets/css/index.css'>
+</head>
+<body>
+   <h1>El problema del ebrio</h1>
+
+   <p>
+      <b>Enunciado:</b> Supongamos que un ebrio está parado en una esquina, cuando decide caminar para que le pase el efecto “ya ustedes saben cuál”.
+      Supongamos que existe una probabilidad igual de que se dirija al norte, sur, este u oeste al llegar a cada esquina.
+      Si camina 10 calles, ¿Cuál es la probabilidad de que termine su recorrido a dos calles de donde lo empezó?
+   </p>
+
+   <p>
+      <b>Enfoque:</b> La esquina en la que está parado el ebrio será tomada como las coordenadas <b>(0, 0)</b>. Los movimientos al norte y al sur
+      estarán representados por el <b>eje de las ordenadas</b> mientras que al este y oeste serán representados por el <b>eje de las abscisas</b>.
+      Si al finalizar el movimiento la suma <b>absoluta</b> de las coordenadas es igual a <b>2</b>, entonces el ebrio se encuentra a 2 cuadras por
+      lo que es tomado en cuenta para la probabilidad.
+   </p>
+
+   <p>
+      Al final, la probabilidad de que el ebrio termine a dos cuadras de donde empezó será igual a 
+      la cantidad de veces que terminó a dos cuadras entre la cantidad de ejecuciones del algoritmo multiplicado por 100
+   </p>
+
+   <div class='app'>
+      <div class='app-content'>
+         <h3>Ingresar datos</h3>
+
+         <form class='form' id='form'>
+            <div class='form-group'>
+               <p>Ingrese la cantidad de veces que quiere ejecutar el algoritmo:</p>
+
+               <div class='form-input'>
+                  <input type='text' pattern="[0-9]+" placeholder='Cantidad de ejecuciones' autocomplete='off' id='input'>
+
+                  <button type='submit'>Ejecutar</button>
+               </div>
+
+               <span id='error'></span>
+            </div>
+         </form>
+
+         <div class='results' id='results'>
+            <h2>Resultados obtenidos:</h2>
+
+            <div class='results-table'>
+               <div class='results-row'>
+                  <p>Cantidad de ejecuciones:</p>
+
+                  <b id='qty'></b>
+               </div>
+
+               <div class='results-row'>
+                  <p>Cantidad de veces que terminó a 2 cuadras:</p>
+
+                  <b id='success'></b>
+               </div>
+
+               <div class='results-row'>
+                  <p>Probabilidad de que termine a 2 cuadras:</p>
+
+                  <b id='prob'></b>
+               </div>
+            </div>
+         </div>
+      </div>
+
+      <div class='app-content'>
+         <h3>Registro de iteraciones</h3>
+
+         <div class='log'>
+            <div class='record'>
+               <p><b>Iteración</b></p>
+
+               <p><b>Posición</b></p>
+
+               <p><b>¿A 2 calles?</b></p>
+            </div>
+
+            <div class='log-list' id='list'></div>
+         </div>
+      </div>
+   </div>
+
+   <script src='./index.js'></script>
+</body>
+</html>
